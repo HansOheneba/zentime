@@ -11,7 +11,7 @@ export default function LandingPage() {
       <div className="absolute inset-0 bg-[radial-gradient(#00000010_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
 
       {/* Framed Content */}
-      <div className="z-10 border-[5px] border-black bg-white rounded-xl shadow-[8px_8px_0_0_#000] p-10 max-w-4xl w-full flex flex-col items-center gap-8 animate-in fade-in duration-700">
+      <div className="z-10 border-[5px] border-black bg-white rounded-xl shadow-[8px_8px_0_0_#000] p-10 md:p-20 w-full max-w-md md:max-w-4xl flex flex-col items-center gap-8 animate-in fade-in duration-700 overflow-auto">
         {/* Logo */}
         <Image
           src="/assets/logo.png"
@@ -22,18 +22,18 @@ export default function LandingPage() {
         />
 
         {/* Tagline Badge */}
-        <span className="px-4 py-1 rounded-full bg-yellow-300 border-2 border-black text-sm font-semibold tracking-wide animate-in slide-in-from-top-5">
-          Built for freelancers, teams & clients
+        <span className="px-4 py-1 text-center rounded-full bg-yellow-300 border-2 border-black font-semibold tracking-wide animate-in slide-in-from-top-5 text-xs">
+          Built for professionals, teams & clients
         </span>
 
         {/* Subtitle */}
-        <p className="text-center text-lg text-gray-800 max-w-md mt-1 leading-relaxed">
+        <p className="text-center text-gray-800 max-w-md mt-1 leading-relaxed text-sm">
           Effortlessly schedule your meetings — save time and eliminate email
           ping-pong.
         </p>
 
         {/* Features Section */}
-        <div className="flex gap-6 mt-4 text-md max-md:flex-col max-md:items-center">
+        <div className="flex gap-6 mt-4 text-md max-md:flex-col max-md:items-center text-xs">
           <Feature icon="fa-calendar-check" text="Easy Booking" />
           <Feature icon="fa-clock" text="Time-Zone Smart" />
           <Feature icon="fa-shield-halved" text="Privacy First" />
@@ -44,9 +44,8 @@ export default function LandingPage() {
           <p className="text-center mb-4 font-medium text-gray-700">
             👋 Sign in to get started
           </p>
-          <div className="flex w-full justify-center">
-            <SignIn routing="hash" appearance={{ baseTheme: neobrutalism }} />
-          </div>
+
+          <SignIn routing="hash" appearance={{ baseTheme: neobrutalism }} />
         </div>
       </div>
     </main>
