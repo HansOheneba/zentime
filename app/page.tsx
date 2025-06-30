@@ -1,9 +1,10 @@
-import Image from "next/image";
+import LandingPage from "@/components/LandingPage";
+import { currentUser } from "@clerk/nextjs/server";
 
-export default function Home() {
-  return (
-    <h1 className="text-3xl font-bold text-center mt-10">
-      Calendra app
-    </h1>
-  );
+
+export default async function Homepage() {
+
+const user = await currentUser();
+
+  if (!user) return <LandingPage />;
 }
