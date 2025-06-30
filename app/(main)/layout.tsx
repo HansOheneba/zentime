@@ -1,4 +1,6 @@
+
 import { currentUser } from "@clerk/nextjs/server";
+import { NavbarShell } from "@/components/NavBarShell";
 
 export default async function({
   children,
@@ -8,9 +10,11 @@ export default async function({
 
     const user = await currentUser()
   return (
-    <main>
-        {user ? <privateNavBar/> : <publicNavBar/>}
-      <section>{children}</section>
-    </main>
+    <>
+      <NavbarShell />
+      <main>
+        <section>{children}</section>
+      </main>
+    </>
   );
 }
