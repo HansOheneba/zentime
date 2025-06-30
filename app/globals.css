@@ -129,3 +129,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+.clerk-user-button-modal,
+.cl-userButtonPopoverCard,
+.clerk-modal {
+  z-index: 9999 !important;
+}

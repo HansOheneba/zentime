@@ -23,7 +23,12 @@ export default function PrivateNavBar() {
         <div className="flex items-center justify-between max-w-7xl mx-auto ">
           {/* Logo */}
           <Link href="/events" className="flex items-center gap-2">
-            <Image src="/assets/logoNav.png" alt="Logo" width={30} height={30} />
+            <Image
+              src="/assets/logoNav.png"
+              alt="Logo"
+              width={30}
+              height={30}
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -79,7 +84,7 @@ export default function PrivateNavBar() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-64 bg-white p-6 border-l-4 border-black shadow-[6px_0_0_0_#000]"
+                className="w-64 bg-white p-6 border-l-4 border-black shadow-[6px_0_0_0_#000] z-50 overflow-visible"
               >
                 <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
                 <div className="flex flex-col gap-4 mt-8">
