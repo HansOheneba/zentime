@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Calendra",
+  title: "Zentime",
   description: "A simple calendar app built with Next.js and TypeScript to handle bookings and appointments",
 };
 

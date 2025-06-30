@@ -6,12 +6,12 @@ import Image from "next/image";
 
 export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-[#fafafa] text-black font-sans flex items-center justify-center px-4 py-10 relative overflow-hidden">
+    <main className="min-h-screen bg-[#fafafa] text-black font-sans flex flex-col items-center justify-center px-4 py-10 relative overflow-hidden">
       {/* Background Texture */}
       <div className="absolute inset-0 bg-[radial-gradient(#00000010_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
 
       {/* Framed Content */}
-      <div className="z-10 border-[5px] border-black bg-white rounded-xl shadow-[8px_8px_0_0_#000] p-10 md:p-20 w-full max-w-md md:max-w-4xl flex flex-col items-center gap-8 animate-in fade-in duration-700 overflow-auto">
+      <div className="z-10 border-[5px] border-black bg-white rounded-xl shadow-[8px_8px_0_0_#000] p-4 sm:p-8 md:p-10 lg:p-20 w-full max-w-lg md:max-w-2xl flex flex-col items-center gap-8 animate-in fade-in duration-700 overflow-auto">
         {/* Logo */}
         <Image
           src="/assets/logo.png"
@@ -38,15 +38,14 @@ export default function LandingPage() {
           <Feature icon="fa-clock" text="Time-Zone Smart" />
           <Feature icon="fa-shield-halved" text="Privacy First" />
         </div>
+      </div>
+      {/* Sign-In Section */}
+      <div className="animate-in slide-in-from-bottom-5 duration-500">
+        <p className="text-center my-4 font-medium text-gray-700">
+          👋 Sign in to get started
+        </p>
 
-        {/* Sign-In Section */}
-        <div className="animate-in slide-in-from-bottom-5 duration-500">
-          <p className="text-center mb-4 font-medium text-gray-700">
-            👋 Sign in to get started
-          </p>
-
-          <SignIn routing="hash" appearance={{ baseTheme: neobrutalism }} />
-        </div>
+        <SignIn routing="hash" appearance={{ baseTheme: neobrutalism }} />
       </div>
     </main>
   );
