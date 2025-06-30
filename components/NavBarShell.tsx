@@ -2,7 +2,7 @@
 
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { PublicNavBar } from "./PublicNavBar";
-import { PrivateNavBar } from "./PrivateNavBar";
+import PrivateNavBar from "./PrivateNavBar";
 
 export function NavbarShell() {
   return (
