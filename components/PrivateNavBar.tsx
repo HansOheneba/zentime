@@ -23,8 +23,7 @@ export default function PrivateNavBar() {
         <div className="flex items-center justify-between max-w-7xl mx-auto ">
           {/* Logo */}
           <Link href="/events" className="flex items-center gap-2">
-            <Image src="/assets/logo.png" alt="Logo" width={40} height={40} />
-            <span className="font-bold text-lg">Zentime</span>
+            <Image src="/assets/logoNav.png" alt="Logo" width={30} height={30} />
           </Link>
 
           {/* Desktop Nav */}
@@ -112,7 +111,6 @@ export default function PrivateNavBar() {
                 </div>
                 <div className="mt-8 border-t border-black pt-6">
                   <UserButton
-                    afterSignOutUrl="/"
                     appearance={{
                       elements: {
                         avatarBox:
