@@ -11,7 +11,7 @@ export default function LandingPage() {
       <div className="absolute inset-0 bg-[radial-gradient(#00000015_1px,transparent_1px)] [background-size:18px_18px] z-0 opacity-40 pointer-events-none"></div>
 
       {/* Main Content Wrapper */}
-      <div className="z-10 border-[3px] border-black bg-white rounded-xl shadow-[8px_8px_0_0_#000] p-6 sm:p-10 lg:p-16 w-full max-w-6xl flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 lg:gap-20">
+      <div className="z-10 border-[3px] border-black bg-white rounded-xl shadow-[6px_6px_0_0_#000] p-6 sm:p-10 lg:p-16 w-full max-w-6xl flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 lg:gap-20">
         {/* Left Side: Logo and Text */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 max-w-md">
           <Image
@@ -39,9 +39,9 @@ export default function LandingPage() {
         </div>
 
         {/* Right Side: Sign In */}
-        <div className="w-full max-w-md">
-          <p className="text-center my-4 font-medium text-gray-700">
-            👋 Sign in to get started
+        <div className="w-full flex justify-center items-center flex-col max-w-md">
+          <p className="text-center my-4 font-bold text-gray-700">
+          Sign in to get started
           </p>
           <SignIn routing="hash" appearance={{ baseTheme: neobrutalism }} />
         </div>
