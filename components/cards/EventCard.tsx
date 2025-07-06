@@ -34,7 +34,7 @@ export default function EventCard({
   return (
     <Card
       className={cn(
-        "flex flex-col border-4 border-black bg-white shadow-[6px_6px_0_0_#000] transition-transform hover:scale-[1.02] rounded-xl",
+        "flex flex-col border-4 border-black bg-white shadow-[4px_4px_0_0_#000] rounded-xl",
         !isActive && "bg-gray-100 opacity-70"
       )}
     >
@@ -59,7 +59,7 @@ export default function EventCard({
             variant="outline"
             eventId={id}
             clerkUserId={clerkUserId}
-            className="border-2 border-black px-4 py-2 font-semibold text-black transition-all duration-300 translate-x-[-4px] translate-y-[-4px] shadow-[4px_4px_0px_black] hover:translate-x-[-7px] hover:translate-y-[-7px] hover:shadow-[7px_7px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none rounded-md"
+            className="border-2 border-black px-4 py-2 font-semibold text-black transition-all duration-300 translate-x-[-4px] translate-y-[-4px] shadow-[4px_4px_0px_black] hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[6px_6px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none rounded-md"
           />
         )}
         <Button

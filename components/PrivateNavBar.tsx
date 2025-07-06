@@ -5,17 +5,14 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetTitle,
-} from "@/components/ui/sheet";
+// Removed Sheet imports for custom mobile nav
 import { PrivateNavLinks } from "@/constants";
 import { UserButton } from "@clerk/nextjs";
+import { useState } from "react";
 
 export default function PrivateNavBar() {
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <div className="px-5 py-2">
@@ -71,23 +68,44 @@ export default function PrivateNavBar() {
             />
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - custom sidebar, not modal/sheet */}
           <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="border-2 border-black shadow-[3px_3px_0_0_#000] p-2"
-                >
-                  <Menu className="w-5 h-5" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent
-                side="right"
-                className="w-64 bg-white p-6 border-l-4 border-black shadow-[6px_0_0_0_#000] z-50 overflow-visible"
+            <Button
+              variant="outline"
+              className="border-2 border-black shadow-[3px_3px_0_0_#000] p-2"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open mobile menu"
+            >
+              <Menu className="w-5 h-5" />
+            </Button>
+            {/* Overlay */}
+            {/* Sidebar is always rendered for animation, but visually hidden when closed */}
+            <div>
+              {/* Overlay */}
+              <div
+                className={`fixed inset-0 bg-black/30 z-40 transition-opacity duration-300 ${
+                  mobileOpen
+                    ? "opacity-100 pointer-events-auto"
+                    : "opacity-0 pointer-events-none"
+                }`}
+                onClick={() => setMobileOpen(false)}
+                aria-label="Close mobile menu overlay"
+              />
+              {/* Sidebar */}
+              <aside
+                className={`fixed top-0 right-0 h-full w-64 bg-white p-6 border-l-4 border-black shadow-[6px_0_0_0_#000] z-50 flex flex-col transition-transform duration-300 ${
+                  mobileOpen ? "translate-x-0" : "translate-x-full"
+                }`}
+                aria-label="Mobile navigation sidebar"
               >
-                <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
-                <div className="flex flex-col gap-4 mt-8">
+                <button
+                  className="ml-auto mb-4 text-black font-bold text-xl"
+                  onClick={() => setMobileOpen(false)}
+                  aria-label="Close mobile menu"
+                >
+                  ×
+                </button>
+                <div className="flex flex-col gap-4 mt-4">
                   {PrivateNavLinks.map((item) => {
                     const isActive =
                       pathname === item.route ||
@@ -101,6 +119,7 @@ export default function PrivateNavBar() {
                             ? "bg-yellow-300 text-black border-black shadow-[3px_3px_0_0_#000]"
                             : "border-transparent text-gray-700 hover:bg-gray-100"
                         }`}
+                        onClick={() => setMobileOpen(false)}
                       >
                         <Image
                           src={item.imgURL}
@@ -124,8 +143,8 @@ export default function PrivateNavBar() {
                     }}
                   />
                 </div>
-              </SheetContent>
-            </Sheet>
+              </aside>
+            </div>
           </div>
         </div>
       </header>
