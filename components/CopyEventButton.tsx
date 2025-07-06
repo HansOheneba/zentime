@@ -49,9 +49,9 @@ export function CopyEventButton({
     const url = `${location.origin}/book/${clerkUserId}/${eventId}`; // Construct the booking URL
 
     navigator.clipboard
-      .writeText(url) // Try to copy the URL
+      .writeText(url)
       .then(() => {
-        setCopyState("copied"); // On success, show "Copied!" state
+        setCopyState("copied");
         toast("Link copied successfully.", {
           duration: 3000,
         });

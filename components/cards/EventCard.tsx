@@ -59,10 +59,11 @@ export default function EventCard({
             variant="outline"
             eventId={id}
             clerkUserId={clerkUserId}
-            className="border-2 border-black shadow-[2px_2px_0_0_#000] hover:bg-gray-200"
+            className="border-2 border-black px-4 py-2 font-semibold text-black transition-all duration-300 translate-x-[-4px] translate-y-[-4px] shadow-[4px_4px_0px_black] hover:translate-x-[-7px] hover:translate-y-[-7px] hover:shadow-[7px_7px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none rounded-md"
           />
         )}
         <Button
+        variant={"neo"}
           asChild
           className="bg-yellow-300 text-black border-2 border-black shadow-[3px_3px_0_0_#000] hover:bg-yellow-400"
         >

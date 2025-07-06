@@ -1,5 +1,6 @@
 import EventCard from "@/components/cards/EventCard";
 import { Button } from "@/components/ui/button";
+import { NeoButton } from "@/components/ui/neoButton";
 import { getEvents } from "@/server/actions/events";
 import { auth } from "@clerk/nextjs/server";
 import { CalendarPlus, CalendarRange } from "lucide-react";
@@ -23,8 +24,9 @@ export default async function EventsPage() {
           </h1>
 
           <Button
+            variant={"neo"}
             asChild
-            className="border-2 border-black bg-yellow-300 hover:bg-yellow-400 text-black font-semibold flex items-center gap-2 shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all"
+            className=" bg-yellow-300 hover:bg-yellow-400 flex items-center gap-2"
           >
             <Link href="/events/new">
               <CalendarPlus className="w-5 h-5" />
@@ -51,10 +53,11 @@ export default async function EventsPage() {
             </p>
 
             <Button
+              variant={"neo"}
               asChild
-              className="w-fit border-2 border-black bg-yellow-300 hover:bg-yellow-400 text-black font-semibold flex items-center gap-2 mx-auto shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all"
+              className="border-2 border-black bg-yellow-300 hover:bg-yellow-400 text-black font-semibold flex items-center"
             >
-              <Link href="/events/new">
+              <Link href="/events/create">
                 <CalendarPlus className="w-4 h-4" />
                 New Event
               </Link>
