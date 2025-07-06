@@ -12,11 +12,13 @@ export default async function({
     const user = await currentUser()
   return (
     <>
-      <NavbarShell />
-      <main>
-        <section>{children}</section>
-      </main>
-      <Footer/>
+      <div className="min-h-screen flex flex-col">
+        <NavbarShell />
+        <main className="flex-1">
+          <section>{children}</section>
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

@@ -163,7 +163,7 @@ export default function EventForm({
           )}
         />
 
-        <div className="flex gap-3 justify-end">
+        <div className="flex gap-3 justify-end pt-3">
           {event && (
             <AlertDialog>
               <AlertDialogTrigger asChild>
