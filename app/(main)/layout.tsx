@@ -1,6 +1,7 @@
 
 import { currentUser } from "@clerk/nextjs/server";
 import { NavbarShell } from "@/components/NavBarShell";
+import { Footer } from "@/components/footer";
 
 export default async function({
   children,
@@ -15,6 +16,7 @@ export default async function({
       <main>
         <section>{children}</section>
       </main>
+      <Footer/>
     </>
   );
 }
