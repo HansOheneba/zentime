@@ -210,15 +210,17 @@ export default function EventForm({
           )}
 
           <Button
+            
             type="button"
             asChild
-            variant="outline"
+            variant="neo"
             className="border-2 border-black shadow-[3px_3px_0_0_#000]"
           >
             <Link href="/events">Cancel</Link>
           </Button>
 
           <Button
+            variant={"neo"}
             type="submit"
             disabled={form.formState.isSubmitting}
             className="bg-yellow-300 hover:bg-yellow-400 text-black border-2 border-black shadow-[4px_4px_0_0_#000]"

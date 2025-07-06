@@ -19,7 +19,7 @@ export default async function EventsPage() {
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Headline */}
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold border-b-4 border-black pb-1">
+          <h1 className="text-2xl font-bold border-b-4 border-black pb-1">
             My Events
           </h1>
 
@@ -55,9 +55,9 @@ export default async function EventsPage() {
             <Button
               variant={"neo"}
               asChild
-              className="border-2 border-black bg-yellow-300 hover:bg-yellow-400 text-black font-semibold flex items-center"
+              className="border-2 border-black bg-yellow-300 hover:bg-yellow-400 text-black font-semibold flex mx-auto w-fit items-center"
             >
-              <Link href="/events/create">
+              <Link href="/events/new">
                 <CalendarPlus className="w-4 h-4" />
                 New Event
               </Link>
