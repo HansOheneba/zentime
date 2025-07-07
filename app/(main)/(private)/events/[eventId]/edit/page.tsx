@@ -13,7 +13,7 @@ export default async function EditEventPage({
   const { userId, redirectToSignIn } = await auth();
   if (!userId) return redirectToSignIn();
 
-  const { eventId } = await params;
+  const { eventId } = params;
 
   const event = await getEvent(userId, eventId);
   if (!event)
