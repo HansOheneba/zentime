@@ -74,10 +74,7 @@ export default function EventForm({
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-       
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)}>
         {form.formState.errors.root && (
           <div className="text-red-600 font-semibold">
             {form.formState.errors.root.message}
@@ -168,9 +165,9 @@ export default function EventForm({
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button
-                  variant="destructive"
+                  variant="neo"
                   disabled={isDeletePending || form.formState.isSubmitting}
-                  className="border-2 border-black shadow-[3px_3px_0_0_#000]"
+                  className="border-2 bg-red-500 text-white border-black shadow-[3px_3px_0_0_#000]"
                 >
                   Delete
                 </Button>
@@ -183,11 +180,11 @@ export default function EventForm({
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                  <AlertDialogCancel className="border-2 border-black">
+                  <AlertDialogCancel className=" text-black border-2 border-black px-4 py-2 font-semibold transition-all duration-300 translate-x-[-4px] translate-y-[-4px] shadow-[4px_4px_0px_black] hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[6px_6px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none rounded-md">
                     Cancel
                   </AlertDialogCancel>
                   <AlertDialogAction
-                    className="bg-red-500 hover:bg-red-600 text-white border-2 border-black"
+                    className="bg-red-500 hover:bg-red-400 border-2 border-black px-4 py-2 font-semibold text-white transition-all duration-300 translate-x-[-4px] translate-y-[-4px] shadow-[4px_4px_0px_black] hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[6px_6px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none rounded-md"
                     disabled={isDeletePending || form.formState.isSubmitting}
                     onClick={() =>
                       startDeleteTransition(async () => {
@@ -210,7 +207,6 @@ export default function EventForm({
           )}
 
           <Button
-            
             type="button"
             asChild
             variant="neo"
