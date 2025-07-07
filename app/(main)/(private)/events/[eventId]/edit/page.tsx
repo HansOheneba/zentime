@@ -8,13 +8,11 @@ import Link from "next/link";
 export default async function EditEventPage({
   params,
 }: {
-  params: { eventId: string };
+  params: Promise<{ eventId: string }>;
 }) {
   const { userId, redirectToSignIn } = await auth();
   if (!userId) return redirectToSignIn();
-
-  const { eventId } = params;
-
+  const { eventId } = await params;
   const event = await getEvent(userId, eventId);
   if (!event)
     return (
@@ -22,8 +20,8 @@ export default async function EditEventPage({
         <div className="max-w-md border-4 border-black bg-white p-8 rounded-xl shadow-[6px_6px_0_0_#000] animate-fade-in-down">
           <h1 className="text-4xl font-extrabold mb-4 text-black">Uh OHH!</h1>
           <p className="text-sm text-gray-800 mb-6">
-            We couldn’t find the event you’re looking for. It may have been
-            deleted or you don’t have access to view it.
+            We couldn&apos;t find the event you&apos;re looking for. It may have
+            been deleted or you don&apos;t have access to view it.
           </p>
           <Link href={"/events"}>
             <Button variant={"neo"} className="bg-amber-300 font-bold">
