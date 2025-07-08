@@ -15,7 +15,7 @@ export default async function EventsPage() {
   const events = await getEvents(userId);
 
   return (
-    <section className=" px-6 py-12 bg-[#fafafa] text-black">
+    <section className=" px-6 py-12 text-black">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Headline */}
         <div className="flex items-center justify-between">
